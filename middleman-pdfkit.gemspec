@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matt@foryourcontent.de"]
   spec.summary       = %q{PDFKit extension for middleman}
   spec.description   = %q{Generate PDFs from HTML/CSS with middleman}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/matt-hh/middleman-pdfkit"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
