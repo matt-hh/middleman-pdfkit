@@ -19,7 +19,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Add link to example app
+* Activate pdfkit in your [config.rb](https://github.com/matt-hh/middleman-pdfkit-example/blob/master/config.rb#L5-L18)
+* Execute `middleman build`
 
 ## Contributing
 
