@@ -24,9 +24,9 @@ module Middleman
           pdf_filename  = "build/#{pdfkit_filename}.pdf"
           if File.exist?(html_filename)
             generate_pdf(html_filename, pdf_filename)
-            builder.say_status "create", pdf_filename
+            puts "create", pdf_filename
           else
-            builder.say_status "error", "#{pdf_filename} (HTML-File not found )", :red
+            puts "error", "#{pdf_filename} (HTML-File not found )", :red
           end
         end
       end
