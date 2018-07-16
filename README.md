@@ -33,6 +33,7 @@ configure :build do
     # p.margin_right = 10
     # p.margin_bottom = 10
     # p.margin_left = 10
+    # p.print_media_type = true
     # p.encoding = 'UTF-8'
   end
 end

@@ -11,6 +11,7 @@ module Middleman
       option :margin_right,             '0',      'Margin right: 0'
       option :margin_bottom,            '0',      'Margin bottom: 0'
       option :margin_left,              '0',      'Margin left: 0'
+      option :print_media_type,         true,     'Print media type'
       option :encoding,                 'UTF-8',  'Encoding'
 
       def initialize(klass, options_hash={}, &block)
@@ -58,6 +59,7 @@ module Middleman
             encoding:                 options.encoding)
           file = kit.to_file(pdf_filename)
         end
+          print_media_type:         options.print_media_type,
 
     end
   end
