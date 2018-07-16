@@ -21,6 +21,16 @@ module Middleman
         setup_filenames
       end
 
+      def manipulate_resource_list(resources)
+        # Add my @filenames to Sitemap
+        @filenames.each do |input, output|
+          resources << Middleman::Sitemap::Extensions::EndpointResource.new(app.sitemap, output, "/")
+        end
+
+        # Return the new list
+        resources
+      end
+
       def after_build(builder)
         @filenames.each do |file, output|
           puts "after_build: [#{file}] > [#{output}]"
@@ -98,6 +108,7 @@ module Middleman
           print_media_type:         options.print_media_type,
           encoding:                 options.encoding)
         file = kit.to_file(pdf_filename)
+        # puts "pdfkit: #{kit.command}"
       end
 
     end
