@@ -14,14 +14,16 @@ module Middleman
       option :encoding,                 'UTF-8',  'Encoding'
 
       def initialize(klass, options_hash={}, &block)
+        @prefix = "build/"
+
         super
         setup_filenames
       end
 
       def after_build(builder)
         @filenames.each do |pdfkit_filename|
-          html_filename = "build/#{pdfkit_filename}.html"
-          pdf_filename  = "build/#{pdfkit_filename}.pdf"
+          html_filename = "#{@prefix}#{pdfkit_filename}.html"
+          pdf_filename  = "#{@prefix}#{pdfkit_filename}.pdf"
           if File.exist?(html_filename)
             generate_pdf(html_filename, pdf_filename)
             puts "create", pdf_filename
@@ -39,8 +41,8 @@ module Middleman
 
         def all_html_files
           # TODO: find a better way?!
-          Dir.glob(File.join('build', '**', '*.html')).map do |d|
-            File.join(File.dirname(d).sub('build', ''), File.basename(d, '.html'))[1..-1]
+          Dir.glob(File.join(@prefix, '**', '*.html')).map do |d|
+            File.join(File.dirname(d).sub(@prefix, ''), File.basename(d, '.html'))[1..-1]
           end
         end
 
