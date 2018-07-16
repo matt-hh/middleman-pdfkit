@@ -26,6 +26,10 @@ configure :build do
   activate :relative_assets
   activate :pdfkit do |p|
     # p.filenames = ['test/test_page1', 'test/test_page2']
+    # p.filenames = {
+      'test/test_page1' => 'test/test_page1.pdf',
+      'test/test_page2' => 'test/test_page2.pdf',
+     }
     # p.disable_smart_shrinking = true
     # p.quiet = false
     # p.page_size = 'A5'
