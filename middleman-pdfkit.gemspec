@@ -6,8 +6,8 @@ require 'middleman-pdfkit/version'
 Gem::Specification.new do |spec|
   spec.name          = "middleman-pdfkit"
   spec.version       = Middleman::PDFKit::VERSION
-  spec.authors       = ["Matthias Döring"]
-  spec.email         = ["matt@foryourcontent.de"]
+  spec.authors       = ["Matthias Döring", "Naadir Jeewa", "Bruno Medici"]
+  spec.email         = ["matt@foryourcontent.de", "", "opensource@bmconseil.com"]
   spec.summary       = %q{PDFKit extension for middleman}
   spec.description   = %q{Generate PDFs from HTML/CSS with middleman}
   spec.homepage      = "https://github.com/matt-hh/middleman-pdfkit"
@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "middleman-core",  ">= 3.0.0"
-  spec.add_dependency "pdfkit",          "~> 0.6.2"
+  spec.add_dependency "middleman-core",  ">= 4"
+  spec.add_dependency "pdfkit",          "~> 0.8"
   spec.add_dependency "wkhtmltopdf_binary_provider"
 
   spec.add_development_dependency "bundler", "~> 1.6"

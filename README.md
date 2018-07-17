@@ -19,7 +19,33 @@ Or install it yourself as:
 
 ## Usage
 
-* Activate pdfkit in your [config.rb](https://github.com/matt-hh/middleman-pdfkit-example/blob/master/config.rb#L5-L18)
+* Activate pdfkit in your [config.rb]
+
+```
+configure :build do
+  activate :relative_assets
+  activate :pdfkit do |p|
+    # p.filenames = ['test/test_page1', 'test/test_page2']
+    # p.filenames = {
+      'test/test_page1' => 'test/test_page1.pdf',
+      'test/test_page2' => 'test/test_page2.pdf',
+     }
+    # p.disable_smart_shrinking = true
+    # p.quiet = false
+    # p.page_size = 'A5'
+    # p.margin_top = 10
+    # p.margin_right = 10
+    # p.margin_bottom = 10
+    # p.margin_left = 10
+    # p.print_media_type = true
+    # p.encoding = 'UTF-8'
+  end
+end
+
+```
+
+
+
 * Execute `middleman build`
 
 ## Contributing
