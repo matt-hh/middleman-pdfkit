@@ -32,9 +32,9 @@ module Middleman
       end
 
       def after_build(builder)
-        @filenames.each do |pdfkit_filename|
-          html_filename = "build/#{pdfkit_filename}.html"
-          pdf_filename  = "build/#{pdfkit_filename}.pdf"
+        @filenames.each do |input, output|
+          html_filename = "build/#{input}.html"
+          pdf_filename  = "build/#{output}"
           if File.exist?(html_filename)
             generate_pdf(html_filename, pdf_filename)
             puts "create", pdf_filename
